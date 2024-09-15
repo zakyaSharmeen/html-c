@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 40%;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 10px 20px rgb(40, 40, 40);
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        /* background: black; */
+        background: skyblue;
+        cursor: pointer;
+      }
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .container:hover .overlay {
+        opacity: 0.8;
+      }
+    </style>
+    <div class="container">
+      <img
+        src="https://picsum.photos/seed/picsum/200/300
+        "
+        alt=""
+      />
+      <div class="overlay">
+        <div class="content">
+          <h3>u did it</h3>
+          <p>yes u did it</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

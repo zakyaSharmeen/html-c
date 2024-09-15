@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        font-size: 75px;
+        color: white;
+      }
+      span {
+        color: yellow;
+      }
+    </style>
+    <div class="container">
+      <h1>i m a <span id="auto-type"></span></h1>
+    </div>
+
+
+  
+
+  <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#auto-type', {
+      strings: ['papa', 'mumma', 'uncle', 'chacha'],
+      typeSpeed: 150,
+      backSpeed: 150,
+      looped: true
+    });
+  </script>
+</body>
+  </body>
+</html>

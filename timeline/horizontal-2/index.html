@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .timeline-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .timeline {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        width: 700px;
+      }
+
+      .timeline-item {
+        flex-shrink: 0;
+        width: 250px;
+        margin: 0 10px;
+        text-align: center;
+        position: relative;
+      }
+
+      .timeline-content {
+        background: #000;
+        color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-content h2 {
+        margin: 0 0 10px;
+      }
+
+      .nav-btn {
+        background: #ccc;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-btn:hover {
+        background: #888;
+      }
+
+      .timeline-item.active .timeline-content {
+        background: #ffcc00;
+        color: #000;
+      }
+
+      .timeline-item.active .timeline-content p {
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+    </style>
+    <div class="timeline-container">
+      <button class="nav-btn" id="prev-btn">←</button>
+      <div class="timeline">
+        <div class="timeline-item" data-year="2018">
+          <div class="timeline-content">
+            <h2>2018</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              dignissim neque condimentum lacus dapibus.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item" data-year="2014">
+          <div class="timeline-content">
+            <h2>2014</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              dignissim neque condimentum lacus dapibus.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item" data-year="2015">
+          <div class="timeline-content">
+            <h2>2015</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              dignissim neque condimentum lacus dapibus.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item" data-year="2012">
+          <div class="timeline-content">
+            <h2>2012</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              dignissim neque condimentum lacus dapibus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="nav-btn" id="next-btn">→</button>
+    </div>
+    <script>
+      const timelineItems = document.querySelectorAll(".timeline-item");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+      let currentIndex = 0;
+
+      function updateTimeline() {
+        timelineItems.forEach((item, index) => {
+          item.classList.remove("active");
+          if (index === currentIndex) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateTimeline();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < timelineItems.length - 1) {
+          currentIndex++;
+          updateTimeline();
+        }
+      });
+
+      updateTimeline();
+    </script>
+  </body>
+</html>

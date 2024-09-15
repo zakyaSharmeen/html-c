@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 120px;
+        background: #11141a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .logo {
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav a {
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 35px;
+        transition: 0.3s;
+      }
+      nav a:hover,
+      nav a.active {
+        color: #0ef;
+      }
+      section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1f242d;
+        font-size: 100px;
+        color: #fff;
+        font-weight: 700;
+      }
+      section:nth-child(even) {
+        background: red;
+      }
+    </style>
+
+    <header>
+      <a href="#" class="logo">ActiveLink.</a>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <section id="home">Home</section>
+    <section id="about">About</section>
+    <section id="services">Services</section>
+    <section id="portfolio">Portfolio</section>
+    <section id="contact">Contact</section>
+
+    <script>
+      // Select all section elements on the page
+      let sections = document.querySelectorAll("section");
+
+      // Select all anchor elements within the nav element inside the header
+      let navLinks = document.querySelectorAll("header nav a");
+
+      // Add an event listener for the window scroll event
+      window.onscroll = () => {
+        // Iterate over each section element
+        sections.forEach((sec) => {
+          // Get the current vertical scroll position of the window
+          let top = window.scrollY;
+
+          // Get the distance from the top of the section to the top of the document, minus 150 pixels
+          let offset = sec.offsetTop - 150;
+
+          // Get the height of the section
+          let height = sec.offsetHeight;
+
+          // Get the id attribute of the section
+          let id = sec.getAttribute("id");
+
+          // Check if the current scroll position is within the bounds of the section
+          if (top >= offset && top < offset + height) {
+            // Iterate over each nav link
+            navLinks.forEach((links) => {
+              // Remove the 'active' class from all nav links
+              links.classList.remove("active");
+
+              // Add the 'active' class to the nav link that corresponds to the current section
+              document
+                .querySelector("header nav a[href*=" + id + "]")
+                .classList.add("active");
+            });
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

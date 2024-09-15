@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 80%;
+    margin: 100px auto;
+    height: 200vh;
+    border: 1px solid black;
+}
+.section-freelancing{
+    background-image: url(course_5.jpg);
+    height: 200vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* background-overlay */
+    position: relative;
+    transition: all 0.7s linear;
+    text-align: center;
+}
+
+/* background-overlay */
+.section-freelancing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #3e64ff;
+    opacity: 0.6;
+
+}
+.section-freelancing .container{
+    position: relative;
+}
+.container h2{
+    text-transform: uppercase;
+    color: yellow;
+    font-size: 40px;
+}
+.container a{
+    background-color: red;
+    color: white;
+
+}

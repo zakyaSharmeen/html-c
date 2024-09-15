@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    text-align: center;
+    margin: 1em;
+}
+
+.counters{
+    padding: 3em 2em;
+    background: teal;
+    color: white;
+    text-align: center;
+    /* display: flex;
+    justify-content: space-around; */
+}
+.counters > div{
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4em 2em;
+}

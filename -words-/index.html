@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* left-side */
+      .title {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+      .title::before {
+        content: "";
+        height: 2px;
+        background-color: red;
+        display: block;
+      }
+
+      /* right */
+      .title2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+      .title2::after {
+        content: "";
+        height: 2px;
+        background-color: red;
+        display: block;
+      }
+
+      /* both-middle */
+
+      .title3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+      .title3::after,
+      .title3::before {
+        content: "";
+        height: 2px;
+        background-color: red;
+        display: block;
+      }
+    </style>
+
+    <div class="container">
+      <h2 class="title">zakya sharmeen</h2>
+    </div>
+
+    <div class="container2">
+      <h2 class="title2">zakya sharmeen</h2>
+    </div>
+
+    <div class="container3">
+      <h2 class="title3">zakya sharmeen</h2>
+    </div>
+  </body>
+</html>

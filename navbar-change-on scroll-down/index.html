@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 200vh;
+      }
+      .bg {
+        background-image: url(images.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 700px;
+      }
+      .navbar {
+        position: fixed;
+        color: white;
+        padding: 30px;
+        width: 100%;
+        border: 1px solid black;
+      }
+      li {
+        display: inline;
+        padding: 28px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .bgColor {
+        background-color: white;
+        color: black;
+        border: 2px solid red;
+      }
+    </style>
+    <div class="bg">
+      <div class="header-1" id="header-1">
+        <ul>
+          <li>HOME</li>
+          <li>HOME</li>
+          <li>HOME</li>
+        </ul>
+      </div>
+      <div class="navbar" id="navbar">
+        <ul>
+          <li>HOME</li>
+          <li>HOME</li>
+          <li>HOME</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function changeBg() {
+        var navbar = document.getElementById("navbar");
+        var scrollValue = window.scrollY;
+        if (scrollValue < 150) {
+          navbar.classList.remove("bgColor");
+        } else {
+          navbar.classList.add("bgColor");
+        }
+      }
+      window.addEventListener("scroll", changeBg);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #experience-work {
+        padding: 98px 0;
+      }
+      .experience-work .main-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 15px;
+        border: 1px solid black;
+      }
+      .experience-work .main-container .row {
+        display: flex;
+        margin-right: -15px;
+        margin-left: -15px;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .card-content strong {
+        line-height: 1;
+        font-weight: 500;
+        font-size: 34px;
+        color: rgba(0, 0, 0, 0.8);
+        display: block;
+        margin-bottom: 10px;
+      }
+      .card-content span {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    </style>
+    <section class="experience-work" id="experience-work">
+      <div class="main-container">
+        <div class="row">
+          <div class="card-content">
+            <div class="text">
+              <strong class="number" data-count="50">0</strong>
+            </div>
+            <div class="text">
+              <span>Years of Experience</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="text">
+              <strong class="number" data-count="8500">0</strong>
+            </div>
+            <div class="text">
+              <span>Projects Completed</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="text">
+              <strong class="number" data-count="378">0</strong>
+            </div>
+            <div class="text">
+              <span>Clients Served</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="text">
+              <strong class="number" data-count="1200">0</strong>
+            </div>
+            <div class="text">
+              <span>Hours Worked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Function to animate counters
+      function animateCounter(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          element.innerText = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      // Function to start the counter animations
+      function startCounterAnimation(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = document.querySelectorAll(".number");
+            counters.forEach((counter) => {
+              const endValue = parseInt(counter.getAttribute("data-count"));
+              animateCounter(counter, 0, endValue, 2000);
+            });
+            // Stop observing after animation starts
+            observer.disconnect();
+          }
+        });
+      }
+
+      // Using IntersectionObserver to detect when the section is in view
+      document.addEventListener("DOMContentLoaded", function () {
+        const options = {
+          threshold: 0.5, // Trigger when 50% of the section is in view
+        };
+        const observer = new IntersectionObserver(
+          startCounterAnimation,
+          options
+        );
+        const target = document.querySelector("#experience-work");
+        observer.observe(target);
+      });
+    </script>
+  </body>
+</html>

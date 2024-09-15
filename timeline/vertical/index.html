@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #474e5d;
+        font-family: serif;
+      }
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+      .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        border: 1px solid black;
+      }
+      .container::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid red;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .left {
+        left: 0;
+      }
+      .right {
+        left: 50%;
+      }
+      .content p {
+        max-width: 450px;
+      }
+      .left::before {
+        content: "";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+      .right::before {
+        content: "";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      .right::after {
+        left: -16px;
+      }
+      .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+      }
+    </style>
+
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            nulla consectetur labore voluptate. Quidem sequi praesentium culpa
+            fugiat quas, quisquam cum alias autem, voluptatem dignissimos
+            architecto! Non quis voluptate iste ipsum veritatis? Totam molestias
+            iure reprehenderit ratione ex nihil earum, quos nisi provident
+            temporibus illo autem, alias aliquam esse veniam?
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            nulla consectetur labore voluptate. Quidem sequi praesentium culpa
+            fugiat quas, quisquam cum alias autem, voluptatem dignissimos
+            architecto! Non quis voluptate iste ipsum veritatis? Totam molestias
+            iure reprehenderit ratione ex nihil earum, quos nisi provident
+            temporibus illo autem, alias aliquam esse veniam?
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            nulla consectetur labore voluptate. Quidem sequi praesentium culpa
+            fugiat quas, quisquam cum alias autem, voluptatem dignissimos
+            architecto! Non quis voluptate iste ipsum veritatis? Totam molestias
+            iure reprehenderit ratione ex nihil earum, quos nisi provident
+            temporibus illo autem, alias aliquam esse veniam?
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            nulla consectetur labore voluptate. Quidem sequi praesentium culpa
+            fugiat quas, quisquam cum alias autem, voluptatem dignissimos
+            architecto! Non quis voluptate iste ipsum veritatis? Totam molestias
+            iure reprehenderit ratione ex nihil earum, quos nisi provident
+            temporibus illo autem, alias aliquam esse veniam?
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+            nulla consectetur labore voluptate. Quidem sequi praesentium culpa
+            fugiat quas, quisquam cum alias autem, voluptatem dignissimos
+            architecto! Non quis voluptate iste ipsum veritatis? Totam molestias
+            iure reprehenderit ratione ex nihil earum, quos nisi provident
+            temporibus illo autem, alias aliquam esse veniam?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

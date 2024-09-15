@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+}
+
+.accordian{
+    max-width: 800px;
+}
+.accordian .contentBx{
+    position: relative;
+    margin: 10px 20px;
+}
+.accordian .contentBx .label{
+    position: relative;
+    padding: 10px;
+    background-color: blue;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+}
+
+.accordian .contentBx .label::before{
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    transition: 0.5s ease;
+
+}
+.accordian .contentBx.active .label::before{
+    content: "-";
+    transition: 0.5s ease;
+}
+.accordian .contentBx .content{
+    position: relative;
+    background: white;
+    color: black;
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+
+
+}
+
+.accordian .contentBx.active .content{
+    height: 150px;
+    padding: 10px;
+}
